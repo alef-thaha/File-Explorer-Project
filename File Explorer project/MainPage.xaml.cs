@@ -30,11 +30,8 @@ namespace File_Explorer_project
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private ObservableCollection<Folders> Picturefiles = new ObservableCollection<Folders>();
+        
         private ObservableCollection<Folders> Listitems = new ObservableCollection<Folders>();
-        private ObservableCollection<Folders> Musicfiles = new ObservableCollection<Folders>();
-        private ObservableCollection<Folders> VideoFiles = new ObservableCollection<Folders>();
-        private ObservableCollection<Folders> Objectfiles = new ObservableCollection<Folders>();
         private ObservableCollection<Folders> Pickfiles = new ObservableCollection<Folders>();
         private ObservableCollection<Folders> Pickfolders = new ObservableCollection<Folders>();
         private ObservableCollection<Folders> Documentfiles = new ObservableCollection<Folders>();
@@ -159,7 +156,7 @@ namespace File_Explorer_project
             GiveItems(musicFolder);
             DetailsTextblock.Text = "";
             Visible_collapsed();
-            Double windowwidth = this.ActualWidth;
+            
             
         }
 
@@ -261,7 +258,7 @@ namespace File_Explorer_project
             Visible_collapsed();
             ListGrid.Background = new SolidColorBrush(Colors.White);
             Detailstackpanel.Background = new SolidColorBrush(Colors.Transparent);
-            Double windowwidth = this.ActualWidth;
+            
           
         }
 
@@ -314,14 +311,11 @@ namespace File_Explorer_project
             Visible_collapsed();
             ListGrid.Background = new SolidColorBrush(Colors.White);
             Detailstackpanel.Background = new SolidColorBrush(Colors.Transparent);
-            Double windowwidth = this.ActualWidth;
+           
            
         }
 
-        private void Detailstackpanel_Loaded(object sender, RoutedEventArgs e)
-        { 
-            
-        }
+       
 
         private void Visible_collapsed()
         {
