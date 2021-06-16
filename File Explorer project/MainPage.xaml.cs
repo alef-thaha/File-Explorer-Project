@@ -77,14 +77,16 @@ namespace File_Explorer_project
        
         private async  void FoldersListview_ItemClick(object sender, ItemClickEventArgs e)
         {
-            
+
             var data = (Folders)e.ClickedItem;
             string folder = data.Foldername;
 
             // Add the selected folder to the path 
 
-            path +="\\" + folder;
+            path += "\\" + folder;
             ListTextblock.Text = data.Foldername;
+
+
             if (Files.Contains(folder))
             {
                 Double windowwidth = this.ActualWidth;
@@ -200,31 +202,11 @@ namespace File_Explorer_project
             GiveItems(videofolder);
             DetailsTextblock.Text = "";
             Visible_collapsed();
-            Double windowwidth = this.ActualWidth;
+            
             
         }
 
-        private   void DocumentsButton_Click(object sender, RoutedEventArgs e)
-        {
-            ListGrid.Background = new SolidColorBrush(Colors.White);
-            Detailstackpanel.Background = new SolidColorBrush(Colors.Transparent);
-            ListTextblock.Text = "Documents";
-            
-            if (path != "C:\\Users\\" + ApplicationData.Current.LocalFolder.Path.Split("\\")[2] + "\\")
-            {
-                path = "C:\\Users\\" + ApplicationData.Current.LocalFolder.Path.Split("\\")[2] + "\\";
-            }
-            path += ListTextblock.Text;
-
-            //Get all Files and Folders in the Documents Library
-
-            StorageFolder Documentfolder = KnownFolders.DocumentsLibrary;
-            GiveItems(Documentfolder);
-            DetailsTextblock.Text = "";
-            Visible_collapsed();
-            Double windowwidth = this.ActualWidth;
-            
-        }
+       
         private async void  GiveItems(StorageFolder folder)
         {
             Documentfiles.Clear();
@@ -254,7 +236,7 @@ namespace File_Explorer_project
         {
             
             FoldersListview.ItemsSource = Pickfiles;
-            ListTextblock.Text = "Picked files";
+            ListTextblock.Text = "Picked Files";
             var picker =  new Windows.Storage.Pickers.FileOpenPicker();
             picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
             picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
@@ -269,6 +251,7 @@ namespace File_Explorer_project
             path = file.Path;
             if (file != null)
             {
+               
                 Files.Add(file.Name);
                 Windows.Storage.FileProperties.BasicProperties basicProperties = await file.GetBasicPropertiesAsync();
                 string filesize = string.Format("{0:n}", basicProperties.Size);
@@ -285,13 +268,15 @@ namespace File_Explorer_project
         private async  void FolderButton_Click(object sender, RoutedEventArgs e)
         {
             FoldersListview.ItemsSource = Pickfolders;
-            path = "C:\\Users\\" + ApplicationData.Current.LocalFolder.Path.Split("\\")[2] ;
+            path = "C:\\Users\\" + ApplicationData.Current.LocalFolder.Path.Split("\\")[2];
             var Folderpicker = new Windows.Storage.Pickers.FolderPicker();
             Folderpicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
             Folderpicker.FileTypeFilter.Add("*");
             Windows.Storage.StorageFolder folder = await Folderpicker.PickSingleFolderAsync();
+
             if (folder != null)
             {
+                
                 Windows.Storage.FileProperties.BasicProperties basicProperties = await folder.GetBasicPropertiesAsync();
                 string filesize = string.Format("{0:n}", basicProperties.Size);
                Pickfolders.Add(new Folders { Foldername = folder.Name, FolderCreatedDate = folder.DateCreated, Folderpath = folder.Path,FolderModifiedDate=basicProperties.DateModified,Foldersize=filesize });
@@ -301,6 +286,7 @@ namespace File_Explorer_project
             {
                 return;
             }
+            
             StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
              if( await picturesFolder.TryGetItemAsync(folder.Name) != null)
             {
@@ -322,7 +308,9 @@ namespace File_Explorer_project
             {
                 path += "\\" + "3D Objects";
             }
+            
             DetailsTextblock.Text = "";
+          
             Visible_collapsed();
             ListGrid.Background = new SolidColorBrush(Colors.White);
             Detailstackpanel.Background = new SolidColorBrush(Colors.Transparent);
@@ -361,9 +349,10 @@ namespace File_Explorer_project
                 path += "\\" + ListTextblock.Text;
                 return;
             }
+            
             else
             {
-                ListTextblock.Text = arr[arr.Length - 1];
+                ListTextblock.Text = arr[arr.Length - 1];   
             }
             Listitems.Clear();
             StorageFolder storageFolder = await StorageFolder.GetFolderFromPathAsync(path);
@@ -377,9 +366,13 @@ namespace File_Explorer_project
                     string fileSize = string.Format("{0:n0}", basicProperties.Size);
                     Listitems.Add(new Folders { Foldername = Item.Name, Folderpath = Item.Path, FolderCreatedDate = Item.DateCreated, Foldersize = fileSize, FolderModifiedDate = basicProperties.DateModified });
                 }
-
+                if(Item is StorageFile)
+                {
+                    Files.Add(Item.Name);
+                }
             }
             FoldersListview.ItemsSource = Listitems;
+
 
             Visible_collapsed();
             
@@ -420,10 +413,7 @@ namespace File_Explorer_project
             VideoButton.Background = new SolidColorBrush(Colors.Transparent);
         }
 
-        private void DocumentsButton_PointerMoved(object sender, PointerRoutedEventArgs e)
-        {
-            DocumentsButton.Background = new SolidColorBrush(Colors.Transparent);
-        }
+       
 
         private void FileButton_PointerMoved(object sender, PointerRoutedEventArgs e)
         {
@@ -457,7 +447,10 @@ namespace File_Explorer_project
                     string fileSize = string.Format("{0:n0}", basicProperties.Size);
                     Listitems.Add(new Folders { Foldername = Item.Name, Folderpath = Item.Path, FolderCreatedDate = Item.DateCreated, Foldersize = fileSize, FolderModifiedDate = basicProperties.DateModified });
                 }
-
+                if(Item is StorageFile)
+                {
+                    Files.Add(Item.Name);
+                }
             }
             FoldersListview.ItemsSource = Listitems;
 

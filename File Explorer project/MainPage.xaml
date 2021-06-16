@@ -26,7 +26,7 @@
                         <Setter Target="MusicTextBlock.(Visibility)" Value="Collapsed"/>
                         <Setter Target="VideoTextblock.(Visibility)" Value="Collapsed"/>
                         <Setter Target="ObjectTextblock.(Visibility)" Value="Collapsed"/>
-                        <Setter Target="DocumentTextblock.(Visibility)" Value="Collapsed"/>
+                        
                         <Setter Target="FileTextblock.(Visibility)" Value="Collapsed"/>
                         <Setter Target="FolderTextBlock.(Visibility)" Value="Collapsed"/>
                         <Setter Target="Folderstext.Visibility" Value="Collapsed"/>
@@ -46,7 +46,7 @@
                         <Setter Target="MusicTextBlock.(Visibility)" Value="Collapsed"/>
                         <Setter Target="VideoTextblock.(Visibility)" Value="Collapsed"/>
                         <Setter Target="ObjectTextblock.(Visibility)" Value="Collapsed"/>
-                        <Setter Target="DocumentTextblock.(Visibility)" Value="Collapsed"/>
+                        
                         <Setter Target="FileTextblock.(Visibility)" Value="Collapsed"/>
                         <Setter Target="FolderTextBlock.(Visibility)" Value="Collapsed"/>
                         <Setter Target="Folderstext.Visibility" Value="Collapsed"/>
@@ -67,7 +67,7 @@
                         <Setter Target="MusicTextBlock.(Visibility)" Value="Visible"/>
                         <Setter Target="VideoTextblock.(Visibility)" Value="Visible"/>
                         <Setter Target="ObjectTextblock.(Visibility)" Value="Visible"/>
-                        <Setter Target="DocumentTextblock.(Visibility)" Value="Visible"/>
+                        
                         <Setter Target="FileTextblock.(Visibility)" Value="Visible"/>
                         <Setter Target="FolderTextBlock.(Visibility)" Value="Visible"/>
                         <Setter Target="Folderstext.Visibility" Value="Visible"/>
@@ -128,12 +128,8 @@
                     <TextBlock x:Name="ObjectTextblock" Text="3D objects" Foreground="Black" FontWeight="Bold"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="DocumentsButton"  BorderThickness="0" Click="DocumentsButton_Click" Margin="10,10,0,0" Background="Transparent" PointerMoved="DocumentsButton_PointerMoved">
-                <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Symbol="Document" Margin="0,0,10,0" Foreground="Blue"/>
-                    <TextBlock x:Name="DocumentTextblock" Text="Documents" Foreground="Black" FontWeight="Bold"/>
-                </StackPanel>
-            </Button>
+            
+            
             <Button x:Name="FileButton"  BorderThickness="0" Click="FileButton_Click" Margin="10,10,0,0" Background="Transparent" PointerMoved="FileButton_PointerMoved">
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Symbol="OpenFile" Margin="0,0,10,0" Foreground="Blue"/>

@@ -26,7 +26,7 @@
                         <Setter Target="MusicTextBlock.(Visibility)" Value="Collapsed"/>
                         <Setter Target="VideoTextblock.(Visibility)" Value="Collapsed"/>
                         <Setter Target="ObjectTextblock.(Visibility)" Value="Collapsed"/>
-                        <Setter Target="DocumentTextblock.(Visibility)" Value="Collapsed"/>
+                        
                         <Setter Target="FileTextblock.(Visibility)" Value="Collapsed"/>
                         <Setter Target="FolderTextBlock.(Visibility)" Value="Collapsed"/>
                         <Setter Target="Folderstext.Visibility" Value="Collapsed"/>
@@ -46,7 +46,7 @@
                         <Setter Target="MusicTextBlock.(Visibility)" Value="Collapsed"/>
                         <Setter Target="VideoTextblock.(Visibility)" Value="Collapsed"/>
                         <Setter Target="ObjectTextblock.(Visibility)" Value="Collapsed"/>
-                        <Setter Target="DocumentTextblock.(Visibility)" Value="Collapsed"/>
+                        
                         <Setter Target="FileTextblock.(Visibility)" Value="Collapsed"/>
                         <Setter Target="FolderTextBlock.(Visibility)" Value="Collapsed"/>
                         <Setter Target="Folderstext.Visibility" Value="Collapsed"/>
@@ -67,7 +67,7 @@
                         <Setter Target="MusicTextBlock.(Visibility)" Value="Visible"/>
                         <Setter Target="VideoTextblock.(Visibility)" Value="Visible"/>
                         <Setter Target="ObjectTextblock.(Visibility)" Value="Visible"/>
-                        <Setter Target="DocumentTextblock.(Visibility)" Value="Visible"/>
+                        
                         <Setter Target="FileTextblock.(Visibility)" Value="Visible"/>
                         <Setter Target="FolderTextBlock.(Visibility)" Value="Visible"/>
                         <Setter Target="Folderstext.Visibility" Value="Visible"/>
@@ -95,55 +95,51 @@
                 <SymbolIcon Symbol="Back" Foreground="BlueViolet"  />
             </Button>
             <StackPanel Orientation="Horizontal"  Margin="0,0,0,10"   >
-                <Button x:ConnectionId='41' x:Name="Hamburgerbutton" FontFamily="Segoe MDL2 Assets "  Content="&#xE700;"   FontSize="20" Margin="10,0,0,0" Foreground="White" Background="Transparent" BorderThickness="0"                                             />
-                <TextBlock x:ConnectionId='42' x:Name="Folderstext" Text="Folders"  FontSize="25" Margin="0,0,0,0" Foreground="Black"  />
+                <Button x:ConnectionId='39' x:Name="Hamburgerbutton" FontFamily="Segoe MDL2 Assets "  Content="&#xE700;"   FontSize="20" Margin="10,0,0,0" Foreground="White" Background="Transparent" BorderThickness="0"                                             />
+                <TextBlock x:ConnectionId='40' x:Name="Folderstext" Text="Folders"  FontSize="25" Margin="0,0,0,0" Foreground="Black"  />
             </StackPanel>
             <Button x:ConnectionId='25' x:Name="BackButton"  BorderThickness="0"                          Margin="10,0,0,10" Background="Transparent"                                                                                     >
                 <StackPanel Orientation="Horizontal"  >
                     <SymbolIcon Symbol="Back" Foreground="red" Margin="0,0,10,0"  />
-                    <TextBlock x:ConnectionId='40' x:Name="Backtextblock" Text="Back" Foreground="Black" FontWeight="Bold" FontStretch="Condensed"  />
+                    <TextBlock x:ConnectionId='38' x:Name="Backtextblock" Text="Back" Foreground="Black" FontWeight="Bold" FontStretch="Condensed"  />
                 </StackPanel>
             </Button>
             <Button x:ConnectionId='26' x:Name="PicturesButton"  BorderThickness="0"                              Margin="10,0,0,0" Background="Transparent"                                             >
                 <StackPanel Orientation="Horizontal" >
                     <SymbolIcon Symbol="Pictures" Margin="0,0,10,0" Foreground="Blue"/>
-                    <TextBlock x:ConnectionId='39' x:Name="PicturesTextblock" Text="Pictures" Foreground="Black" FontWeight="Bold" />
+                    <TextBlock x:ConnectionId='37' x:Name="PicturesTextblock" Text="Pictures" Foreground="Black" FontWeight="Bold" />
                 </StackPanel>
             </Button>
             <Button x:ConnectionId='27' x:Name="MusicButton"  BorderThickness="0"                           Margin="10,10,0,0" Background="Transparent"                                        >
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Symbol="MusicInfo" Margin="0,0,10,0" Foreground="Blue"/>
-                    <TextBlock x:ConnectionId='38' x:Name="MusicTextBlock" Text="Music" Foreground="Black" FontWeight="Bold"/>
+                    <TextBlock x:ConnectionId='36' x:Name="MusicTextBlock" Text="Music" Foreground="Black" FontWeight="Bold"/>
                 </StackPanel>
             </Button>
             <Button x:ConnectionId='28' x:Name="VideoButton"  BorderThickness="0"                           Margin="10,10,0,0" Background="Transparent"                                        >
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Symbol="Video" Margin="0,0,10,0" Foreground="Blue"/>
-                    <TextBlock x:ConnectionId='37' x:Name="VideoTextblock" Text="Videos" Foreground="Black" FontWeight="Bold"/>
+                    <TextBlock x:ConnectionId='35' x:Name="VideoTextblock" Text="Videos" Foreground="Black" FontWeight="Bold"/>
                 </StackPanel>
             </Button>
             <Button x:ConnectionId='29' Name="ObjectButton" BorderThickness="0"                            Margin="10,10,0,0" Background="Transparent"                                         >
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Symbol="Globe" Margin="0,0,10,0" Foreground="Blue"/>
-                    <TextBlock x:ConnectionId='36' x:Name="ObjectTextblock" Text="3D objects" Foreground="Black" FontWeight="Bold"/>
+                    <TextBlock x:ConnectionId='34' x:Name="ObjectTextblock" Text="3D objects" Foreground="Black" FontWeight="Bold"/>
                 </StackPanel>
             </Button>
-            <Button x:ConnectionId='30' x:Name="DocumentsButton"  BorderThickness="0"                               Margin="10,10,0,0" Background="Transparent"                                            >
-                <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Symbol="Document" Margin="0,0,10,0" Foreground="Blue"/>
-                    <TextBlock x:ConnectionId='35' x:Name="DocumentTextblock" Text="Documents" Foreground="Black" FontWeight="Bold"/>
-                </StackPanel>
-            </Button>
-            <Button x:ConnectionId='31' x:Name="FileButton"  BorderThickness="0"                          Margin="10,10,0,0" Background="Transparent"                                       >
+            
+            
+            <Button x:ConnectionId='30' x:Name="FileButton"  BorderThickness="0"                          Margin="10,10,0,0" Background="Transparent"                                       >
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Symbol="OpenFile" Margin="0,0,10,0" Foreground="Blue"/>
-                    <TextBlock x:ConnectionId='34' x:Name="FileTextblock" Text="Pick a file" Foreground="Black" FontWeight="Bold"/>
+                    <TextBlock x:ConnectionId='33' x:Name="FileTextblock" Text="Pick a file" Foreground="Black" FontWeight="Bold"/>
                 </StackPanel>
             </Button>
-            <Button x:ConnectionId='32' x:Name="FolderButton"  BorderThickness="0"                            Margin="10,10,0,0" Background="Transparent"                                         >
+            <Button x:ConnectionId='31' x:Name="FolderButton"  BorderThickness="0"                            Margin="10,10,0,0" Background="Transparent"                                         >
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Symbol="Folder" Margin="0,0,10,0" Foreground="Blue"/>
-                    <TextBlock x:ConnectionId='33' x:Name="FolderTextBlock" Text="Pick a folder" Foreground="Black" FontWeight="Bold"/>
+                    <TextBlock x:ConnectionId='32' x:Name="FolderTextBlock" Text="Pick a folder" Foreground="Black" FontWeight="Bold"/>
                 </StackPanel>
             </Button>
             
