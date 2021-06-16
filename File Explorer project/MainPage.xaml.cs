@@ -236,7 +236,7 @@ namespace File_Explorer_project
             ListTextblock.Text = "Picked Files";
             var picker =  new Windows.Storage.Pickers.FileOpenPicker();
             picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
-            picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
+            picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
             picker.FileTypeFilter.Add(".txt");
             picker.FileTypeFilter.Add(".mp3");
             picker.FileTypeFilter.Add(".wav");
@@ -267,7 +267,7 @@ namespace File_Explorer_project
             FoldersListview.ItemsSource = Pickfolders;
             path = "C:\\Users\\" + ApplicationData.Current.LocalFolder.Path.Split("\\")[2];
             var Folderpicker = new Windows.Storage.Pickers.FolderPicker();
-            Folderpicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
+            Folderpicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.MusicLibrary;
             Folderpicker.FileTypeFilter.Add("*");
             Windows.Storage.StorageFolder folder = await Folderpicker.PickSingleFolderAsync();
 
