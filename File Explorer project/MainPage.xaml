@@ -7,114 +7,209 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     xmlns:using="using:File_Explorer_project.Model"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    >
    
 
-    <Grid>
+    <Grid  x:Name="MainGrid" Loaded="MainGrid_Loaded"  >
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup  >
+                <VisualState >
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" x:Name="Narrowlayotwidth"/>
+                        
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="DetailViewBack.Visibility" Value="Visible"/>
+                        <Setter Target="ListGrid.(Grid.ColumnSpan)" Value="2"/>
+                        <Setter Target="Backtextblock.Visibility" Value="Collapsed"/>
+                        <Setter Target="PicturesTextblock.(Visibility)" Value="Collapsed"/>
+                        <Setter Target="MusicTextBlock.(Visibility)" Value="Collapsed"/>
+                        <Setter Target="VideoTextblock.(Visibility)" Value="Collapsed"/>
+                        <Setter Target="ObjectTextblock.(Visibility)" Value="Collapsed"/>
+                        <Setter Target="DocumentTextblock.(Visibility)" Value="Collapsed"/>
+                        <Setter Target="FileTextblock.(Visibility)" Value="Collapsed"/>
+                        <Setter Target="FolderTextBlock.(Visibility)" Value="Collapsed"/>
+                        <Setter Target="Folderstext.Visibility" Value="Collapsed"/>
+                        <Setter Target="columnone.Width" Value="Auto"/>
+                        <Setter Target="columntwo.Width" Value="Auto"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600"  />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="FoldersListview.Visibility" Value="Visible"/>
+                        <Setter Target="ListTextblock.Visibility" Value="Visible"/>
+                        <Setter Target="Backtextblock.Visibility" Value="Collapsed"/>
+                        <Setter Target="PicturesTextblock.(Visibility)" Value="Collapsed"/>
+                        <Setter Target="MusicTextBlock.(Visibility)" Value="Collapsed"/>
+                        <Setter Target="VideoTextblock.(Visibility)" Value="Collapsed"/>
+                        <Setter Target="ObjectTextblock.(Visibility)" Value="Collapsed"/>
+                        <Setter Target="DocumentTextblock.(Visibility)" Value="Collapsed"/>
+                        <Setter Target="FileTextblock.(Visibility)" Value="Collapsed"/>
+                        <Setter Target="FolderTextBlock.(Visibility)" Value="Collapsed"/>
+                        <Setter Target="Folderstext.Visibility" Value="Collapsed"/>
+                        <Setter Target="columnone.Width" Value="Auto"/>
+                        <Setter Target="columntwo.Width" Value="2*"/>
+                        <Setter Target="ListGrid.(Grid.ColumnSpan)" Value="1"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1000"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="ListTextblock.Visibility" Value="Visible"/>
+                        <Setter Target="FoldersListview.Visibility" Value="Visible"/>
+                        <Setter Target="Backtextblock.Visibility" Value="Visible"/>
+                        <Setter Target="PicturesTextblock.(Visibility)" Value="Visible"/>
+                        <Setter Target="MusicTextBlock.(Visibility)" Value="Visible"/>
+                        <Setter Target="VideoTextblock.(Visibility)" Value="Visible"/>
+                        <Setter Target="ObjectTextblock.(Visibility)" Value="Visible"/>
+                        <Setter Target="DocumentTextblock.(Visibility)" Value="Visible"/>
+                        <Setter Target="FileTextblock.(Visibility)" Value="Visible"/>
+                        <Setter Target="FolderTextBlock.(Visibility)" Value="Visible"/>
+                        <Setter Target="Folderstext.Visibility" Value="Visible"/>
+                        <Setter Target="columnone.Width" Value="*"/>
+                        <Setter Target="columntwo.Width" Value="2*"/>
+                        <Setter Target="ListGrid.(Grid.ColumnSpan)" Value="1"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*" x:Name="columnone" />
+            <ColumnDefinition Width="2*" x:Name="columntwo"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions >
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <TextBlock Text="Folders" Grid.Column="0" Grid.Row="0" FontSize="25" Margin="10,0,0,10"/>
-        <TextBlock x:Name="ListTextblock" Grid.Column="1" Grid.Row="0" FontSize="25" Margin="10,0,0,10"/>
-        <TextBlock x:Name="DetailsTextblock" Grid.Column="2" Grid.Row="0" FontSize="25" Margin="50,0,0,0" TextWrapping="Wrap"/>
-        <StackPanel Grid.Row="1">
-            <Button x:Name="PicturesButton" Background="White" BorderThickness="0" Click="PicturesButton_Click" Margin="10,0,0,0"   >
+
+        <Grid.Background>
+            <AcrylicBrush BackgroundSource="HostBackdrop"  FallbackColor="SkyBlue"  TintColor="DeepSkyBlue" TintOpacity="0.5" />
+            
+        </Grid.Background>
+       
+      
+        
+        <StackPanel  x:Name="FolderStackpanel"  >
+
+            <Button x:Name="DetailViewBack" BorderThickness="0" Background="Transparent" Margin="10,0,0,10" Click="DetailViewBack_Click" Visibility="Collapsed" PointerMoved="DetailViewBack_PointerMoved" >
+                <SymbolIcon Symbol="Back" Foreground="BlueViolet"  />
+            </Button>
+            <StackPanel Orientation="Horizontal"  Margin="0,0,0,10"   >
+                <Button x:Name="Hamburgerbutton" FontFamily="Segoe MDL2 Assets "  Content="&#xE700;"   FontSize="20" Margin="10,0,0,0" Foreground="White" Background="Transparent" BorderThickness="0" PointerMoved="Hamburgerbutton_PointerMoved" />
+                <TextBlock x:Name="Folderstext" Text="Folders"  FontSize="25" Margin="0,0,0,0" Foreground="Black"  />
+            </StackPanel>
+            <Button x:Name="BackButton"  BorderThickness="0" Click="BackButton_Click" Margin="10,0,0,10" Background="Transparent" PointerMoved="BackButton_PointerMoved" PointerPressed="BackButton_PointerPressed"   >
+                <StackPanel Orientation="Horizontal"  >
+                    <SymbolIcon Symbol="Back" Foreground="red" Margin="0,0,10,0"  />
+                    <TextBlock x:Name="Backtextblock" Text="Back" Foreground="Black" FontWeight="Bold" FontStretch="Condensed"  />
+                </StackPanel>
+            </Button>
+            <Button x:Name="PicturesButton"  BorderThickness="0" Click="PicturesButton_Click" Margin="10,0,0,0" Background="Transparent" PointerMoved="PicturesButton_PointerMoved"  >
                 <StackPanel Orientation="Horizontal" >
-                    <SymbolIcon Symbol="Pictures" Margin="0,0,10,0" Foreground="DeepSkyBlue"/>
-                    <TextBlock x:Name="PicturesTextblock" Text="Pictures" />
+                    <SymbolIcon Symbol="Pictures" Margin="0,0,10,0" Foreground="Blue"/>
+                    <TextBlock x:Name="PicturesTextblock" Text="Pictures" Foreground="Black" FontWeight="Bold" />
                 </StackPanel>
             </Button>
-            <Button x:Name="MusicButton" Background="White" BorderThickness="0" Click="MusicButton_Click" Margin="10,10,0,0">
+            <Button x:Name="MusicButton"  BorderThickness="0" Click="MusicButton_Click" Margin="10,10,0,0" Background="Transparent" PointerMoved="MusicButton_PointerMoved">
                 <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Symbol="MusicInfo" Margin="0,0,10,0" Foreground="DeepSkyBlue"/>
-                    <TextBlock x:Name="MusicTextBlock" Text="Music"/>
+                    <SymbolIcon Symbol="MusicInfo" Margin="0,0,10,0" Foreground="Blue"/>
+                    <TextBlock x:Name="MusicTextBlock" Text="Music" Foreground="Black" FontWeight="Bold"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="VideoButton" Background="White" BorderThickness="0" Click="VideoButton_Click" Margin="10,10,0,0">
+            <Button x:Name="VideoButton"  BorderThickness="0" Click="VideoButton_Click" Margin="10,10,0,0" Background="Transparent" PointerMoved="VideoButton_PointerMoved">
                 <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Symbol="Video" Margin="0,0,10,0" Foreground="DeepSkyBlue"/>
-                    <TextBlock x:Name="VideoTextblock" Text="Videos"/>
+                    <SymbolIcon Symbol="Video" Margin="0,0,10,0" Foreground="Blue"/>
+                    <TextBlock x:Name="VideoTextblock" Text="Videos" Foreground="Black" FontWeight="Bold"/>
                 </StackPanel>
             </Button>
-            <Button Name="ObjectButton" Background="White" BorderThickness="0" Click="ObjectButton_Click" Margin="10,10,0,0">
+            <Button Name="ObjectButton" BorderThickness="0" Click="ObjectButton_Click" Margin="10,10,0,0" Background="Transparent" PointerMoved="ObjectButton_PointerMoved">
                 <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Symbol="Globe" Margin="0,0,10,0" Foreground="DeepSkyBlue"/>
-                    <TextBlock x:Name="ObjectTextblock" Text="3D objects"/>
+                    <SymbolIcon Symbol="Globe" Margin="0,0,10,0" Foreground="Blue"/>
+                    <TextBlock x:Name="ObjectTextblock" Text="3D objects" Foreground="Black" FontWeight="Bold"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="DocumentsButton" Background="White" BorderThickness="0" Click="DocumentsButton_Click" Margin="10,10,0,0">
+            <Button x:Name="DocumentsButton"  BorderThickness="0" Click="DocumentsButton_Click" Margin="10,10,0,0" Background="Transparent" PointerMoved="DocumentsButton_PointerMoved">
                 <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Symbol="Document" Margin="0,0,10,0" Foreground="DeepSkyBlue"/>
-                    <TextBlock x:Name="DocumentTextblock" Text="Documents"/>
+                    <SymbolIcon Symbol="Document" Margin="0,0,10,0" Foreground="Blue"/>
+                    <TextBlock x:Name="DocumentTextblock" Text="Documents" Foreground="Black" FontWeight="Bold"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="FileButton" Background="white" BorderThickness="0" Click="FileButton_Click" Margin="10,10,0,0">
+            <Button x:Name="FileButton"  BorderThickness="0" Click="FileButton_Click" Margin="10,10,0,0" Background="Transparent" PointerMoved="FileButton_PointerMoved">
                 <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Symbol="OpenFile" Margin="0,0,10,0" Foreground="DeepSkyBlue"/>
-                    <TextBlock x:Name="FileTextblock" Text="Pick a file"/>
+                    <SymbolIcon Symbol="OpenFile" Margin="0,0,10,0" Foreground="Blue"/>
+                    <TextBlock x:Name="FileTextblock" Text="Pick a file" Foreground="Black" FontWeight="Bold"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="FolderButton" Background="White" BorderThickness="0" Click="FolderButton_Click" Margin="10,10,0,0">
+            <Button x:Name="FolderButton"  BorderThickness="0" Click="FolderButton_Click" Margin="10,10,0,0" Background="Transparent" PointerMoved="FolderButton_PointerMoved">
                 <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Symbol="Folder" Margin="0,0,10,0" Foreground="DeepSkyBlue"/>
-                    <TextBlock x:Name="FolderTextBlock" Text="Pick a folder"/>
+                    <SymbolIcon Symbol="Folder" Margin="0,0,10,0" Foreground="Blue"/>
+                    <TextBlock x:Name="FolderTextBlock" Text="Pick a folder" Foreground="Black" FontWeight="Bold"/>
                 </StackPanel>
             </Button>
+            
         </StackPanel>
         
-        <ListView x:Name="FoldersListview"  Grid.Row="1" Grid.Column="1" IsItemClickEnabled="True" ItemClick="FoldersListview_ItemClick" >
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="using:Folders">
-                    <TextBlock Text="{Binding Foldername}" HorizontalAlignment="Center"/>
-                </DataTemplate>
+        <Grid   Grid.Column="1" x:Name="ListGrid"   >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="ListTextblock"  FontSize="25" Margin="10,0,0,10" TextWrapping="Wrap"/>
+            <ListView x:Name="FoldersListview" Grid.Row="1"  IsItemClickEnabled="True" ItemClick="FoldersListview_ItemClick"  >
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="using:Folders">
+                        <TextBlock Text="{Binding Foldername}" HorizontalAlignment="Center"/>
+                    </DataTemplate>
                 </ListView.ItemTemplate>
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem" >
-                    <Setter Property="BorderBrush" Value="Black"/>
-                    <Setter Property="BorderThickness" Value="1"/>
-                </Style>
-            </ListView.ItemContainerStyle>
-        </ListView>
-        <SplitView x:Name="DetailsSplitview" DisplayMode="Inline" OpenPaneLength="700" CompactPaneLength="0" Grid.Row="1" Grid.Column="2" Height="300" Margin="20,0,0,20" PaneBackground="White"  >
-            <SplitView.Pane>
-                <StackPanel>
-                    <AppBarButton x:Name="SplitviewcancelButton" Content="Cancel" HorizontalAlignment="Right"  VerticalAlignment="Top" Icon="Cancel" Width="20" Height="30" Click="SplitviewcancelButton_Click" PointerEntered="SplitviewcancelButton_PointerEntered" PointerExited="SplitviewcancelButton_PointerExited" >
-                    </AppBarButton>
-                    <StackPanel Margin="20,0,0,0" >
-                        <StackPanel Orientation="Horizontal" Margin="10">
-                            <TextBlock Text="File name :" Width="100" Margin="0,0,10,0"/>
-                            <TextBlock x:Name="Filenametext"/>
-                        </StackPanel>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem" >
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+        </Grid>
+        
+        <Grid x:Name="Detailstackpanel" Margin="0,0,0,0" Grid.Column="2" Loaded="Detailstackpanel_Loaded"  BorderBrush="Black"  >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="DetailsTextblock"  FontSize="25" Margin="110,10,0,0" TextWrapping="Wrap" Grid.ColumnSpan="2" />
+                            <TextBlock x:Name="Filename" Text="File name :" Width="100" Margin="0,20,10,0" Grid.Row="1" />
+                            <TextBlock x:Name="Filenametext" Grid.Row="1" Grid.Column="1" Margin="0,20,30,0" TextWrapping="Wrap" />
+                        
 
-                        <StackPanel Orientation="Horizontal" Margin="10">
-                            <TextBlock Text="File path :" Width="100" Margin="0,0,10,0"/>
-                            <TextBlock x:Name="Filepathtext" TextWrapping="WrapWholeWords" TextTrimming="CharacterEllipsis"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="10">
-                            <TextBlock Text="Created date :" Width="100" Margin="0,0,10,0" />
-                            <TextBlock Name="Filedatetext"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="10">
-                            <TextBlock Text="Modified date :" Width="100" Margin="0,0,10,0"/>
-                            <TextBlock x:Name="FileModifieddatetext"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="10">
-                            <TextBlock Text="File size :" Width="100" Margin="0,0,10,0"/>
-                            <TextBlock x:Name="Filesizetext"/>
-                            <TextBlock Text="  Bytes"/>
-                        </StackPanel>
-
-                    </StackPanel>
-                </StackPanel>
+                        
+                            <TextBlock x:Name="Filepath" Text="File path :" Width="100" Margin="0,20,10,0" Grid.Row="2" />
+                             <TextBlock x:Name="Filepathtext" TextWrapping="Wrap"  Grid.Row="2" Grid.Column="1" Margin="0,20,10,0" />
+                      
+                        
+                            <TextBlock x:Name="Filedate" Text="Created date :" Width="100" Margin="0,20,10,0" Grid.Row="3"/>
+                             <TextBlock Name="Filedatetext"  Grid.Row="3" Grid.Column="1" Margin="0,20,0,0"/>
+                       
+                        
+                            <TextBlock x:Name="Filemodifieddate" Text="Modified date :" Width="100" Margin="0,20,10,0" Grid.Row="4"/>
+                             <TextBlock x:Name="FileModifieddatetext"  Grid.Row="4" Grid.Column="1" Margin="0,20,0,0"/>
+                    
+                       
+                            <TextBlock x:Name="Filesize" Text="File size :" Width="100" Margin="0,20,10,0" Grid.Row="5"/>
+                            <TextBlock x:Name="Filesizetext"  Grid.Row="5" Grid.Column="1" Margin="0,20,0,0"/>
+        </Grid>
+                
  
-            </SplitView.Pane>
-        </SplitView>
+            
        
     </Grid> 
 </Page>

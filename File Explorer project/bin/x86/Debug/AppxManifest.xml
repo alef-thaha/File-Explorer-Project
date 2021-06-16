@@ -41,11 +41,11 @@
     </Application>
   </Applications>
   <Capabilities>
-	  <uap:Capability Name="documentsLibrary"/>
     <uap:Capability Name="picturesLibrary" />
     <uap:Capability Name="videosLibrary" />
     <uap:Capability Name="objects3D" />
     <uap:Capability Name="musicLibrary" />
+	  <uap:Capability Name="documentsLibrary"/>
   </Capabilities>
   <Extensions>
     <Extension Category="windows.activatableClass.inProcessServer">

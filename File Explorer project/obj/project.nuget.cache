@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "a+wKhstulvOKnH7WA1E9xN5bFR6waFRLINWDugzp0zHWiGd/3LqutdQRJENw3DMgWFx7139ua2VeLuMpMUQ/lA==",
+  "dgSpecHash": "gGUEhQ5uw4M7XNxXHiZpDP7ipquh9PtNGqjIEiJ5KMFFKZb5kZRYKu5ji0eLkbrMGwo1O3ZZI7EqW5pwLAvcKg==",
   "success": true,
   "projectFilePath": "C:\\Users\\alef-pt4023\\source\\repos\\File Explorer project\\File Explorer project\\File Explorer project.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.net.uwpcoreruntimesdk\\2.2.11\\microsoft.net.uwpcoreruntimesdk.2.2.11.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.netcore.platforms\\2.1.0\\microsoft.netcore.platforms.2.1.0.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.netcore.universalwindowsplatform\\6.2.11\\microsoft.netcore.universalwindowsplatform.6.2.11.nupkg.sha512",
+    "C:\\Users\\alef-pt4023\\.nuget\\packages\\microsoft.toolkit\\7.0.2\\microsoft.toolkit.7.0.2.nupkg.sha512",
+    "C:\\Users\\alef-pt4023\\.nuget\\packages\\microsoft.toolkit.uwp\\7.0.2\\microsoft.toolkit.uwp.7.0.2.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform\\6.2.11\\runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform.6.2.11.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm.microsoft.net.native.compiler\\2.2.9-rel-29512-01\\runtime.win10-arm.microsoft.net.native.compiler.2.2.9-rel-29512-01.nupkg.sha512",

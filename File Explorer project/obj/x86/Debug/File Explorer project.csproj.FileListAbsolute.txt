@@ -43,3 +43,8 @@ C:\Users\alef-pt4023\source\repos\File Explorer project\File Explorer project\ob
 C:\Users\alef-pt4023\source\repos\File Explorer project\File Explorer project\obj\x86\Debug\ProjectArchitectures.txt
 C:\Users\alef-pt4023\source\repos\File Explorer project\File Explorer project\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_637424617200000000.json
 C:\Users\alef-pt4023\source\repos\File Explorer project\File Explorer project\obj\x86\Debug\File Explorer project.csprojAssemblyReference.cache
+C:\Users\alef-pt4023\source\repos\File Explorer project\File Explorer project\bin\x86\Debug\Microsoft.Toolkit.dll
+C:\Users\alef-pt4023\source\repos\File Explorer project\File Explorer project\bin\x86\Debug\Microsoft.Toolkit.pdb
+C:\Users\alef-pt4023\source\repos\File Explorer project\File Explorer project\bin\x86\Debug\Microsoft.Toolkit.Uwp.dll
+C:\Users\alef-pt4023\source\repos\File Explorer project\File Explorer project\bin\x86\Debug\Microsoft.Toolkit.Uwp.pdb
+C:\Users\alef-pt4023\source\repos\File Explorer project\File Explorer project\obj\x86\Debug\Microsoft.Toolkit.Uwp.pri.xml

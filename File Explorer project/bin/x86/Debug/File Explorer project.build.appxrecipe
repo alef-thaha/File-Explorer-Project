@@ -28,11 +28,20 @@
     <AppxPackagedFile Include="C:\Users\alef-pt4023\source\repos\File Explorer project\File Explorer project\bin\x86\Debug\File Explorer project.exe">
       <PackagePath>entrypoint\File Explorer project.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alef-pt4023\.nuget\packages\microsoft.toolkit\7.0.2\lib\netstandard2.0\Microsoft.Toolkit.dll">
+      <PackagePath>Microsoft.Toolkit.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alef-pt4023\.nuget\packages\microsoft.toolkit.uwp\7.0.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.11\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.19041.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alef-pt4023\source\repos\File Explorer project\File Explorer project\Assets\File image.jpg">
+      <PackagePath>Assets\File image.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alef-pt4023\source\repos\File Explorer project\File Explorer project\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
