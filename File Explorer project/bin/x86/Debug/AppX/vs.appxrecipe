@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\alef-pt4023\source\repos\File Explorer project\File Explorer project\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-06-16T08:54:35.060</Modified>
+      <Modified>2021-06-16T11:51:02.254</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\alef-pt4023\source\repos\File Explorer project\File Explorer project\bin\x86\Debug\File Explorer project.exe">
       <PackagePath>entrypoint\File Explorer project.exe</PackagePath>
-      <Modified>2021-06-16T08:54:34.673</Modified>
+      <Modified>2021-06-16T11:51:01.529</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alef-pt4023\.nuget\packages\microsoft.toolkit\7.0.2\lib\netstandard2.0\Microsoft.Toolkit.dll">
       <PackagePath>Microsoft.Toolkit.dll</PackagePath>
@@ -106,7 +106,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alef-pt4023\source\repos\File Explorer project\File Explorer project\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-06-16T08:54:34.537</Modified>
+      <Modified>2021-06-16T11:51:01.361</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -118,7 +118,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alef-pt4023\source\repos\File Explorer project\File Explorer project\bin\x86\Debug\Core\File Explorer project.exe">
       <PackagePath>File Explorer project.exe</PackagePath>
-      <Modified>2021-06-16T08:54:35.056</Modified>
+      <Modified>2021-06-16T11:51:02.236</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

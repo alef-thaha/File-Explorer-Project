@@ -87,10 +87,7 @@
 
         <Grid.Background>
             <AcrylicBrush BackgroundSource="HostBackdrop"  FallbackColor="SkyBlue"  TintColor="DeepSkyBlue" TintOpacity="0.5" />
-            
         </Grid.Background>
-       
-      
         
         <StackPanel  x:Name="FolderStackpanel"  >
 
